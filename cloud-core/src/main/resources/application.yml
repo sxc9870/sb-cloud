@@ -1,0 +1,9 @@
+server:
+  port: 8761     #指定服务端口
+spring:
+    application:
+      name: eureka-server
+eureka:
+    client:
+        register-with-eureka: false  #当前服务不需要注册到eureka service上
+fetch-registry: false

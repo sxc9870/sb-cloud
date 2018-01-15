@@ -1,0 +1,16 @@
+spring:
+    application:
+        name: config  
+    profiles:
+        active: native  #默认使用本地配置git
+        
+        
+        
+eureka:
+    instance:
+        non-secure-port: ${server.port:8888} #非SSL端口,环境有值则使用环境变量不然只用8888
+        metadata-map:
+            instanceId: ${spring.application.name}:${random.value}  #eureka id
+    client:
+        service-url:
+            defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/         #服务端地址

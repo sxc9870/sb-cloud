@@ -1,0 +1,18 @@
+spring:
+    application:
+        name: core           #appication.yml在 cloud-config工程的 core.yml
+    cloud:
+        config:
+            enabled: true
+            discovery: 
+                enabled: true
+                service-id: CONFIG        #通过应用名找到cloud-config
+eureka:  
+    instance:
+        non-secure-port:${server-port:8082}
+    client: 
+        service-url:
+            defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+            
+            
+    
